@@ -37,18 +37,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-<repositories>
-  <repository>
-    <id>codegenome</id>
-    <url>https://artifacts.codegenomeproject.org/maven</url>
-  </repository>
-</repositories>
-<pluginRepositories>
-  <pluginRepository>
-    <id>codegenome</id>
-    <url>https://artifacts.codegenomeproject.org/maven</url>
-  </pluginRepository>
-</pluginRepositories>
   <build>
     <plugins>
       <plugin>
@@ -65,7 +53,7 @@
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>6.39.0</version>
+            <version>6.37.1</version>
           </dependency>
         </dependencies>
       </plugin>
