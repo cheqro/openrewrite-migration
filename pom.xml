@@ -39,12 +39,36 @@
     </dependencies>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+    <plugins>
 
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
+
+        <plugin>
+            <groupId>org.openrewrite.maven</groupId>
+            <artifactId>rewrite-maven-plugin</artifactId>
+            <version>6.48.0</version>
+
+            <configuration>
+                <exportDatatables>true</exportDatatables>
+                <activeRecipes>
+                    <recipe>
+                        org.openrewrite.java.spring.boot4.UpgradeSpringBoot_4_0
+                    </recipe>
+                </activeRecipes>
+            </configuration>
+
+            <dependencies>
+                <dependency>
+                    <groupId>org.openrewrite.recipe</groupId>
+                    <artifactId>rewrite-spring</artifactId>
+                    <version>6.39.0</version>
+                </dependency>
+            </dependencies>
+        </plugin>
+
+    </plugins>
+</build>
 </project>
